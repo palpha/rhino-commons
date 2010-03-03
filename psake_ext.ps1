@@ -1,6 +1,6 @@
 function Get-Git-Commit
 {
-	$gitLog = git log --oneline -1
+	$gitLog = c:\progra~1\git\cmd\git log --oneline -1
 	return $gitLog.Split(' ')[0]
 }
 
