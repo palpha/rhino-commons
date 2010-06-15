@@ -52,11 +52,11 @@ namespace Rhino.Commons
 			}
 		}
 
-		private void OnNewTransaction(ITransaction transaction, TransactionMode transactionMode, IsolationMode isolationMode, bool distributedTransaction)
+		private void OnNewTransaction(object sender, TransactionEventArgs e)
 		{
-			if (!transaction.DistributedTransaction)
+			if (!e.Transaction.IsAmbient)
 			{
-				transaction.Enlist(new RhinoTransactionResourceAdapter(transactionMode));
+				e.Transaction.Enlist(new RhinoTransactionResourceAdapter(e.Transaction.TransactionMode));
 			}
 		}
 
@@ -65,7 +65,7 @@ namespace Rhino.Commons
 			if (model.Service != null && model.Service == typeof(ITransactionManager))
 			{
 				ITransactionManager txMgr = (ITransactionManager) instance;
-				txMgr.TransactionCreated += new TransactionCreationInfoDelegate(OnNewTransaction);
+				txMgr.TransactionCreated += OnNewTransaction;
 			}	
 		}
 	}

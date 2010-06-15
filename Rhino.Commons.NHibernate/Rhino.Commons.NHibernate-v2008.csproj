@@ -45,10 +45,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SharedLibs\Castle\Castle.Facilities.AutomaticTransactionManagement.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedLibs\Castle\Castle.MicroKernel.dll</HintPath>
-    </Reference>
     <Reference Include="Castle.Services.Transaction, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SharedLibs\Castle\Castle.Services.Transaction.dll</HintPath>
